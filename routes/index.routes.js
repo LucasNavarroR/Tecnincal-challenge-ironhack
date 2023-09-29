@@ -10,7 +10,11 @@ router.get("/phones/:id", (req, res, next) => {
 
  const phoneId = req.params.id
 console.log(phoneId)
- const phoneDetails =  phoneList.find( phone => phone.id === phoneId)
+
+function thePhone(phone) {
+  return phone.id == phoneId
+}
+ const phoneDetails = phoneList.find(thePhone)
  console.log(phoneDetails)
 
 
